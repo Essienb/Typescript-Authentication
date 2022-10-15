@@ -15,9 +15,9 @@ router.post('/auth/login',validateSchema(loginSchema),  AuthController.userLogin
 // router.get('/', function(req, res)
 
 //this allows you to authenticate all users before they can access the page
-router.use(roleRoutes, authenticatingUserAccessToken);
+// router.use(roleRoutes, authenticatingUserAccessToken);
 
-// router.use(roleRoutes);
+router.use(roleRoutes);
 router.use(permissionRoutes);
 
 export default router;

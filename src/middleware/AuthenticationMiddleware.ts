@@ -10,14 +10,14 @@ function authenticatingUserAccessToken(req:Request, res: Response, next: NextFun
 
     const secret = (process.env.JWT_SALT as string);
 
-    //check if the accessToken exist
+    //check if the access Token exist
     if(accessToken == null){
        return res.status(401).json({
             message: "You don't have an accessToken, so stay out!"
         });
     }
 
-    //check if provided accessToken isValid/active
+    //check if provided access Token isValid/active
     jwt.verify(accessToken, secret, (error, userInfoStored)=>{
         if(error){
             return res.status(403).json({

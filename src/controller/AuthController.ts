@@ -28,7 +28,7 @@ class AuthController{
 
             const userCreated = await UserService.create(req.body);
 
-            //generate a token for the created user
+            //generate access token for the created user
             const tokenGenerated = await AuthService.generateToken({id: userCreated.id, roleId: userCreated.roleId});
 
             return res.status(200).json({
@@ -61,7 +61,7 @@ class AuthController{
                     message: "You gath the wrong Answer!"
                 });
             }
-            //generate a token for the created user
+            //generate access token for the created user
             const tokenGenerated = await AuthService.generateToken({id: findUser[0].id, roleId: findUser[0].roleId});
 
             const emailSender = new MailSender();
