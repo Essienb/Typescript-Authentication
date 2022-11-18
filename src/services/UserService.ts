@@ -35,7 +35,7 @@ class UserService{
         //email check
         const emailChecked = await UserModel.findAll({where: {email: email}});
         if(emailChecked.length > 0){
-                throw "Email already exist";
+                return "Email error";
         }
 
         //hash the password

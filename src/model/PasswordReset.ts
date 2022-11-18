@@ -4,7 +4,7 @@ import {sequelizeInstance} from '../db/DbConnection';
 class PasswordReset extends Model{
     declare id: number;
     declare email: string;
-    declare passwordResetToken: string;
+    declare token: string;
 }
 
 PasswordReset.init({

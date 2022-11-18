@@ -1,9 +1,10 @@
-import { Router } from "express";
+import {response, Router} from "express";
 import RoleController from "../controller/RoleController";
 import {authenticatingUserAccessToken} from "../middleware/AuthenticationMiddleware";
 import {hasPermission} from "../middleware/AuthorizationMiddleware";
 
 const router = Router();
+// response.header("Access-Control-Allow-Origin", "*");
 
 
 //Routes for Roles

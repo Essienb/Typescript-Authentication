@@ -1,8 +1,9 @@
-import { Router } from "express";
+import {response, Router} from "express";
 import PermissionController from "../controller/PermissionController";
 
 
 const permissionRouter = Router();
+// response.header("Access-Control-Allow-Origin", "*");
 
 permissionRouter.get('/permissions', PermissionController.getAllPermission);
 permissionRouter.get('/permissions/:id', PermissionController.getPermissionById);

@@ -1,16 +1,18 @@
-import { Router } from "express";
+import {response, Router} from "express";
 import AuthController from "../controller/AuthController";
 import roleRoutes from "./roleRoutes";
 import permissionRoutes from "./permissionRoutes";
-import {authenticatingUserAccessToken} from "../middleware/AuthenticationMiddleware";
-import validateSchema, {loginSchema} from "../middleware/ValidationMiddleware";
+import validateSchema, {registerSchema} from "../middleware/ValidationMiddleware";
+import passwordRouter from "./passwordRoutes";
 
 
 
 const router = Router();
 
-router.post('/auth/register', AuthController.register);
-router.post('/auth/login',validateSchema(loginSchema),  AuthController.userLogin);
+
+router.post('/auth/register', validateSchema(registerSchema), AuthController.register);
+router.post('/auth/login', AuthController.userLogin);
+router.post('/refreshToken', AuthController.RefreshToken);
 
 // router.get('/', function(req, res)
 
@@ -19,5 +21,6 @@ router.post('/auth/login',validateSchema(loginSchema),  AuthController.userLogin
 
 router.use(roleRoutes);
 router.use(permissionRoutes);
+router.use(passwordRouter);
 
 export default router;

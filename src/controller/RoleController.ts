@@ -38,6 +38,7 @@ class RoleController {
     //create role
     static async createRole(req: Request, res: Response) {
         try {
+            console.log(req.body);
             const roleCreated = await RoleService.create(req.body);
             return res.status(200).json({
                 message: "count yourself lucky",
