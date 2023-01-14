@@ -5,9 +5,10 @@ import {RefreshTokenModel} from "../model";
 
 class AuthService{
 
+    //Generate an Access Token
     static generateToken(params: object) {
         return jwt.sign(params, process.env.JWT_SALT as string,
-            {expiresIn: '1hr'});
+            {expiresIn: '3m'});
         // console.log("check generatedToken", generatedToken);
         // return generatedToken;
     }
@@ -23,6 +24,7 @@ class AuthService{
         return refreshToken;
     }
 
+    //Uses a RefreshToken to generate an Access token
     static async  generateAccessToken(refreshToken:any){
         const secret = (process.env.JWT_REFRESHTOKEN_SECRET as string);
         if(refreshToken == null) throw "refresh token is required";

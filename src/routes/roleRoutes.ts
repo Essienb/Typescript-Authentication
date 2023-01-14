@@ -8,14 +8,14 @@ const router = Router();
 
 
 //Routes for Roles
-router.post('/roles',  RoleController.createRole);
- router.get('/roles', authenticatingUserAccessToken, hasPermission('delete-user'), RoleController.getAllRoles);
+router.post('/roles', authenticatingUserAccessToken, RoleController.createRole);
+ router.get('/roles', authenticatingUserAccessToken,  RoleController.getAllRoles);
 // router.get('/roles', hasPermission('delete-user'), RoleController.getAllRoles);
-router.get('/roles/:id', RoleController.getRoleId);
-router.put('/roles/:id', RoleController.updateRole);
-router.delete('/roles/:id', RoleController.deleteRole);
-router.post('/roles/permissions/:id', RoleController.addPermToRole);
-router.delete('/roles/permissions/:id', RoleController.deletePermFromRole);
+router.get('/roles/:id', authenticatingUserAccessToken, RoleController.getRoleId);
+router.put('/roles/:id',authenticatingUserAccessToken, RoleController.updateRole);
+router.delete('/roles/:id', authenticatingUserAccessToken, RoleController.deleteRole);
+router.post('/roles/permissions/:id', authenticatingUserAccessToken, RoleController.addPermToRole);
+router.delete('/roles/permissions/:id', authenticatingUserAccessToken, RoleController.deletePermFromRole);
 
 // router.get('/', function(req, res){
 
