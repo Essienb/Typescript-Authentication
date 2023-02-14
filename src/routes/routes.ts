@@ -12,7 +12,8 @@ const router = Router();
 
 router.post('/auth/register', validateSchema(registerSchema), AuthController.register);
 router.post('/auth/login', AuthController.userLogin);
-router.post('/refreshToken', AuthController.RefreshToken);
+// router.post('/refreshToken', AuthController.RefreshToken);
+router.get('/refreshToken', AuthController.RefreshToken);
 
 // router.get('/', function(req, res)
 

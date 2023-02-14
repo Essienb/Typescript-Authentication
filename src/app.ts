@@ -2,6 +2,7 @@ import express, {Request, Response,NextFunction} from 'express';
 import { DbConnection } from './db/DbConnection';
 import router from "./routes/routes";
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 
 
 
@@ -15,6 +16,7 @@ app.use(cors({
     credentials: true,
 }))
 app.use(express.json());
+app.use(cookieParser());
 app.use(router);
 
 

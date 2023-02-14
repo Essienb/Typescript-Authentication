@@ -76,7 +76,8 @@ class AuthController{
             //     cc: [],
             //     subject: "sample TypeScript script",
             //     message: sampleEmail(findUser[0].firstName)});
-
+            res.cookie("jwt", refreshTokenGenerated,
+                {httpOnly: true, secure: true, maxAge: 24 * 60 * 60 * 1000});
             return res.status(200).json({
                 message: "You're good to hack it!",
                 token: tokenGenerated,
@@ -93,7 +94,8 @@ class AuthController{
 
     static async RefreshToken(req: Request, res: Response){
         try{
-            const access = await AuthService.generateAccessToken(req.body.token);
+            // const access = await AuthService.generateAccessToken(req.body.token);
+            const access = await AuthService.generateAccessToken(req.cookies.jwt);
             //console.log("access: " + JSON.stringify(access))
             return res.status(200).json({
                 message: "Access token generated!",
