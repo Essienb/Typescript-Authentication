@@ -4,7 +4,6 @@ import Role from "./Role";
 import Permission from "./Permission";
 
 
-
 class RolePermission extends Model {
     declare id: number;
     declare roleId: number;
@@ -44,9 +43,9 @@ RolePermission.init({
         tableName: "role_permissions",
         sequelize: sequelizeInstance
     });
-    //defining the Many to Many relationship
-    Role.belongsToMany(Permission,{through: RolePermission, foreignKey: "roleId"});
-    Permission.belongsToMany(Role,{through: RolePermission, foreignKey: "permissionId"});
+//defining the Many to Many relationship
+Role.belongsToMany(Permission, {through: RolePermission, foreignKey: "roleId"});
+Permission.belongsToMany(Role, {through: RolePermission, foreignKey: "permissionId"});
 
 export default RolePermission;
 
