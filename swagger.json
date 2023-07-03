@@ -1,0 +1,415 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "typescript-authentication-api",
+    "description": "An Enterprise level authentication API using TypeScript",
+    "version": "1.0.0"
+  },
+    "host": "localhost:5009",
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/auth/login": {
+        "parameters": [
+          {
+            "name": "email",
+            "in": "body",
+            "required": true,
+            "description": "Email of the user",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "body",
+            "required": true,
+            "description": "Password of the user",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "post": {
+          "tags": [
+            "Auth"
+          ],
+          "summary": "Login to the page with your credentials"
+        }
+      },
+        "/auth/register": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Register to the page with your credentials"
+            }
+        },
+        "/auth/logout": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Logout from the page with your credentials"
+            }
+        },
+        "/auth/refresh": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Refresh your token"
+            }
+        },
+        "/auth/verify": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Verify your token"
+            }
+        },
+        "/auth/verify-email": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Verify your email"
+            }
+        },
+        "/auth/forgot-password": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Forgot your password"
+            }
+        },
+        "/auth/reset-password": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Reset your password"
+            }
+        },
+        "/auth/change-password": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Change your password"
+            }
+        },
+        "/auth/change-email": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "newEmail",
+                "in": "body",
+                "required": true,
+                "description": "New email of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Change your email"
+            }
+        },
+        "/auth/change-username": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "newUsername",
+                "in": "body",
+                "required": true,
+                "description": "New username of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Change your username"
+            }
+        },
+        "/auth/change-name": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "newName",
+                "in": "body",
+                "required": true,
+                "description": "New name of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Change your name"
+            }
+        },
+        "/auth/change-surname": {
+            "parameters": [
+            {
+                "name": "email",
+                "in": "body",
+                "required": true,
+                "description": "Email of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "password",
+                "in": "body",
+                "required": true,
+                "description": "Password of the user",
+                "schema": {
+                "type": "string"
+                }
+            },
+            {
+                "name": "newSurname",
+                "in": "body",
+                "required": true,
+                "description": "New surname of the user",
+                "schema": {
+                "type": "string"
+                }
+            }
+            ],
+            "post": {
+            "tags": [
+                "Auth"
+            ],
+            "summary": "Change your surname"
+            }
+        }
+    }
+}
